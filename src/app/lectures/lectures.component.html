@@ -1,0 +1,82 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-6">
+        <div>
+            <legend>Add new Lecture</legend>
+            <div class="form-group">
+                <label for="name">Enter Name</label>
+                <input type="text" class="form-control" #lecName placeholder="Name">
+            </div>
+            <div class="form-group">
+                <label for="exampleSelect1"> Select Subject</label>
+                <select class="form-control" [(ngModel)]="selectedId">
+                  <option *ngFor="let subject of subjects"  [ngValue]="subject.id">{{subject.name}} </option>
+                  
+                </select>
+              </div>
+              <div class="form-group">
+                  <label for="exampleSelect2"> Select Teacher</label>
+                  <select class="form-control" [(ngModel)]="selectedId1">
+                    <option *ngFor="let subject of teachers"  [ngValue]="subject.id">{{subject.name}} </option>
+                    
+                  </select>
+                </div>
+            <div>
+                <button class="btn btn-primary" (click)="addLecture(lecName.value)">Add Batch</button>
+            
+            </div>
+        </div>
+        <hr>
+        
+        <div class="container">
+            <div class="row">
+              <div class="col-md-3" *ngFor="let courses of lectures" >
+                <div class="card text-white bg-primary mb-3" style="max-width: 30rem;"  >
+                    <div class="card-header">Lecture Name</div>
+                    <div class="card-body">
+                      <h4 class="card-title"></h4>
+                      <p class="card-text">{{courses.name}}</p>
+                    </div>
+                  </div>
+              </div>
+            </div>
+          </div>
+        
+        
+    </div>
+    <div class="col-md-1"></div>
+    <div class="col-md-5">
+
+
+        <div>
+
+            <legend>Add new Student</legend>
+            <div class="form-group">
+                <label for="name">Enter Name</label>
+                <input type="text" class="form-control" #studentName placeholder="Name">
+            </div>
+            
+            <div>
+                <button class="btn btn-primary" (click)="addStudent(studentName.value)">Add Student</button>
+            
+            </div>
+            </div>
+        
+<hr>        
+        <div class="container">
+            <div class="row">
+              <div class="col-md-3" *ngFor="let courses of students" >
+                <div class="card text-white bg-primary mb-4" style="width: 100px;"  >
+                    <div class="card-header">Student Name</div>
+                    <div class="card-body">
+                      <h4 class="card-title"></h4>
+                      <p class="card-text">{{courses.name}}</p>
+                    </div>
+                  </div>
+              </div>
+            </div>
+          </div>
+        
+    </div>
+  </div>
+</div>

@@ -1,0 +1,36 @@
+
+
+
+<div>
+    <legend>Add new Batch</legend>
+    <div class="form-group">
+        <label for="name">Enter Name</label>
+        <input type="text" class="form-control" #batchName placeholder="name">
+    </div>
+    
+    <div class="form-group">
+        <label for="name">Enter Date </label>
+      
+        <input type='text' class="form-control" #datetimepicker1 placeholder="The date format used is yyyy-mm-dd."/>
+           
+    </div>
+    
+    <div>
+        <button class="btn btn-primary" (click)="addBatch(batchName.value,datetimepicker1.value)">Add Batch</button>
+    
+    </div>
+</div>
+<hr>
+    <div class="container">
+        <div class="row">
+          <div class="col-md-3" *ngFor="let courses of batchesList" (click)="BatchClicked(courses.id)" >
+            <div class="card text-white bg-primary mb-3" style="max-width: 20rem;"  >
+                <div class="card-header">Batch Name</div>
+                <div class="card-body">
+                  <h4 class="card-title"></h4>
+                  <p class="card-text">{{courses.name}}</p>
+                </div>
+              </div>
+          </div>
+        </div>
+      </div>

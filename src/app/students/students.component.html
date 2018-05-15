@@ -1,0 +1,34 @@
+<div>
+
+    <legend>Add new Student</legend>
+    <div class="form-group">
+        <label for="name">Enter Name</label>
+        <input type="text" class="form-control" #studentName placeholder="Name">
+    </div>
+    <div class="form-group">
+        <label for="exampleSelect1"> Select Batch</label>
+        <select class="form-control" [(ngModel)]="selectedId">
+          <option *ngFor="let subject of batches"  [ngValue]="subject.id">{{subject.name}} </option>
+          
+        </select>
+      </div>
+    <div>
+        <button class="btn btn-primary" (click)="addStudent(studentName.value)">Add Student</button>
+    
+    </div>
+    </div>
+
+  <hr>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-3" *ngFor="let courses of studentsList" (click)="studentDetail(courses.id)" >
+        <div class="card text-white bg-primary mb-3" style="max-width: 20rem;"  >
+            <div class="card-header">Course Name</div>
+            <div class="card-body">
+              <h4 class="card-title"></h4>
+              <p class="card-text">{{courses.name}}</p>
+            </div>
+          </div>
+      </div>
+    </div>
+  </div>

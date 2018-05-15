@@ -1,0 +1,31 @@
+<div>
+        <legend>New Enrollment</legend>
+        <div class="form-group">
+                <label for="exampleSelect1"> Select Batch</label>
+                <select class="form-control" [(ngModel)]="selectedId">
+                  <option *ngFor="let subject of batches"  [ngValue]="subject.id">{{subject.name}} </option>
+                  
+                </select>
+              </div>
+        <div>
+            <button type="submit" (click)="enroll()">Enroll </button>
+        </div>
+</div>
+<hr>
+
+<div>
+    <div>
+      <h3>Student Name</h3>
+      {{student.name}}
+
+    </div>
+    <div>
+            <h3>Batches Enrolled : </h3>
+            <div *ngFor="let batch of student.batches">
+                {{batch.name}}
+            </div>
+    </div>
+       
+       
+
+</div>

@@ -1,0 +1,18 @@
+<hr>
+<div>
+    <div class="container">
+        <div class="row">
+          <div class="col-md-3" *ngFor="let batches of batchesUpcoming" (click)="BatchClicked(batches.id)" >
+            <div class="card text-white bg-primary mb-3" style="max-width: 20rem;"  >
+                <div class="card-header">Batch Name</div>
+                <div class="card-body">
+                  <h4 class="card-title"></h4>
+                  <p class="card-text">{{batches.name}}</p>
+                </div>
+              </div>
+          </div>
+        </div>
+      </div>
+      
+
+</div>
